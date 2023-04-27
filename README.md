@@ -19,4 +19,11 @@ certbot --nginx -d demo2.app24.click --non-interactive --agree-tos --register-un
 docker run -d --name cnt-nginx -p 80:80 -p 443:443 -v /root/nginx-conf/debian/orig/demo3.conf:/etc/nginx/conf.d/demo3.conf nginx:latest
 
 
+docker run -d --name cnt-nginx -p 80:80 -p 443:443 \
+-v /root/nginx-conf/debian/ssl/demo4.conf:/etc/nginx/conf.d/demo3.conf \
+-v /crt.crt:/crt.crt \
+-v /key.key:/key.key \
+-v /:dhp.pem
+nginx:latest
+
 /root/nginx-conf/debian/orig/demo3.conf
