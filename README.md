@@ -14,3 +14,9 @@ pip3 install certbot certbot-ngin
 
 certbot --nginx -d nginx.app24.click --non-interactive --agree-tos --register-unsafely-without-email
 certbot --nginx -d demo2.app24.click --non-interactive --agree-tos --register-unsafely-without-email
+
+
+docker run -d --name cnt-nginx -p 80:80 -p 443:443 -v /root/nginx-conf/debian/orig/demo3.conf:/etc/nginx/conf.d/demo3.conf nginx:latest
+
+
+/root/nginx-conf/debian/orig/demo3.conf
