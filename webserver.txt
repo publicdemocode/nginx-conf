@@ -5,3 +5,12 @@ apt-get install -y nginx
 
 /var/www/html
 
+cd /root/nginx-conf/website1/
+
+cd /tmp
+git clone https://github.com/publicdemocode/nginx-conf.git
+cd nginx-conf/
+
+cd /etc/nginx/sites-available/
+nano default
+service nginx restart
